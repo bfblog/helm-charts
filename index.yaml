@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  kubernetes-dashboard:
+  - apiVersion: v2
+    appVersion: 2.4.0
+    created: "2022-02-16T23:12:05.674124485Z"
+    description: A Helm chart for Kubernetes
+    digest: 574455e67b9578c5fdffc8dde4bef0f7671fcbace2a0e3873ed9c57fa9e4fb59
+    name: kubernetes-dashboard
+    type: application
+    urls:
+    - https://github.com/bfblog/helm-charts/releases/download/kubernetes-dashboard-1.0.0/kubernetes-dashboard-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-02-16T23:12:05.674137186Z"
