@@ -159,7 +159,11 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
+  {{- if .Values.security.enabled }}
   name: kubernetes-dashboard
+  {{- else }}
+  name: cluster-admin
+  {{- end }}
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard
@@ -195,6 +199,9 @@ spec:
           args:
             - --auto-generate-certificates
             - --namespace=kubernetes-dashboard
+            {{- if not .Values.security.enabled }}
+            - --enable-skip-login
+            {{- end }}
             # Uncomment the following line to manually specify Kubernetes API server Host
             # If not specified, Dashboard will attempt to auto discover the API server and connect
             # to it. Uncomment only if the default does not work.
