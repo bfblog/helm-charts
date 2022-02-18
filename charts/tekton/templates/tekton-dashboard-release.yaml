@@ -84,7 +84,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
   name: tekton-dashboard-backend
 rules:
@@ -166,7 +166,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
   name: tekton-dashboard-tenant
 rules:
@@ -278,7 +278,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
   name: tekton-dashboard-backend
 roleRef:
@@ -408,7 +408,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
   name: tekton-dashboard-tenant
 roleRef:
