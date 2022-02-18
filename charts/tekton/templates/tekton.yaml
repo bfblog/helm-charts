@@ -19,6 +19,10 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-namespace: default
 
 ---
 # Copyright 2019 The Tekton Authors
@@ -107,7 +111,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
 rules:
   - apiGroups: [""]
@@ -137,7 +141,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
 rules:
   # Read-write access to create Pods and PVCs (for Workspaces)
@@ -167,7 +171,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
 rules:
   # The webhook needs to be able to get and update customresourcedefinitions,
@@ -389,7 +393,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
@@ -414,7 +418,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
@@ -435,7 +439,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: Helm
+    meta.helm.sh/release-name: tekton
     meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
@@ -1129,6 +1133,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     pipeline.tekton.dev/release: "v0.33.0"
     version: "v0.33.0"
+    app.kubernetes.io/managed-by: Helm
 spec:
   group: tekton.dev
   preserveUnknownFields: false
