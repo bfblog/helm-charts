@@ -3,6 +3,16 @@ entries:
   kubernetes-dashboard:
   - apiVersion: v2
     appVersion: 2.4.0
+    created: "2022-02-20T13:09:00.185684563Z"
+    description: A Helm chart for Kubernetes
+    digest: 2ad94240c75275d076ea9425868dde5bcc4f13addc5173c5fb9a92822ac0e13d
+    name: kubernetes-dashboard
+    type: application
+    urls:
+    - https://github.com/bfblog/helm-charts/releases/download/kubernetes-dashboard-1.0.2/kubernetes-dashboard-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 2.4.0
     created: "2022-02-17T15:48:49.528345373Z"
     description: A Helm chart for Kubernetes
     digest: 6bf1f868329a6f80816a3337eb9bf25196437825d6e2ded91ff69a1fb3e2653e
@@ -72,4 +82,4 @@ entries:
     urls:
     - https://github.com/bfblog/helm-charts/releases/download/tekton-0.2.0/tekton-0.2.0.tgz
     version: 0.2.0
-generated: "2022-02-18T19:03:34.718152891Z"
+generated: "2022-02-20T13:09:00.185989172Z"
