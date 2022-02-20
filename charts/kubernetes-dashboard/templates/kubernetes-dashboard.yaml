@@ -16,6 +16,11 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: kubernetes-dashboard
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 
 ---
 
@@ -24,8 +29,11 @@ kind: ServiceAccount
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
 
 ---
 
@@ -34,6 +42,9 @@ apiVersion: v1
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
 spec:
@@ -50,6 +61,9 @@ kind: Secret
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard-certs
   namespace: kubernetes-dashboard
 type: Opaque
@@ -61,6 +75,9 @@ kind: Secret
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard-csrf
   namespace: kubernetes-dashboard
 type: Opaque
@@ -74,6 +91,9 @@ kind: Secret
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard-key-holder
   namespace: kubernetes-dashboard
 type: Opaque
@@ -85,6 +105,9 @@ apiVersion: v1
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard-settings
   namespace: kubernetes-dashboard
 
@@ -95,6 +118,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
 rules:
@@ -125,6 +151,10 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
   name: kubernetes-dashboard
 rules:
   # Allow Metrics Scraper to get metrics from the Metrics server
@@ -139,6 +169,9 @@ kind: RoleBinding
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
 roleRef:
@@ -156,6 +189,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: kubernetes-dashboard
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -176,6 +214,9 @@ apiVersion: apps/v1
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
 spec:
@@ -245,6 +286,9 @@ apiVersion: v1
 metadata:
   labels:
     k8s-app: dashboard-metrics-scraper
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: dashboard-metrics-scraper
   namespace: kubernetes-dashboard
 spec:
@@ -261,6 +305,9 @@ apiVersion: apps/v1
 metadata:
   labels:
     k8s-app: dashboard-metrics-scraper
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
   name: dashboard-metrics-scraper
   namespace: kubernetes-dashboard
 spec:
