@@ -1255,6 +1255,10 @@ metadata:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
     pipeline.tekton.dev/release: "v0.33.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-namespace: default
 webhooks:
   - admissionReviewVersions: ["v1"]
     clientConfig:
@@ -1274,6 +1278,10 @@ metadata:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
     pipeline.tekton.dev/release: "v0.33.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-namespace: default
 webhooks:
   - admissionReviewVersions: ["v1"]
     clientConfig:
@@ -1293,6 +1301,10 @@ metadata:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
     pipeline.tekton.dev/release: "v0.33.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-namespace: default
 webhooks:
   - admissionReviewVersions: ["v1"]
     clientConfig:
