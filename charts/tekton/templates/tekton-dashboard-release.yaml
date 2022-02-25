@@ -3,7 +3,7 @@ kind: CustomResourceDefinition
 metadata:
   labels:
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   name: extensions.dashboard.tekton.dev
@@ -52,7 +52,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
   name: tekton-dashboard
   namespace: tekton-pipelines
@@ -61,7 +61,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   labels:
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
   name: tekton-dashboard-info
   namespace: tekton-pipelines
@@ -80,7 +80,7 @@ kind: ClusterRole
 metadata:
   labels:
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
@@ -162,7 +162,7 @@ kind: ClusterRole
 metadata:
   labels:
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
@@ -256,7 +256,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   labels:
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
   name: tekton-dashboard-info
   namespace: tekton-pipelines
@@ -274,7 +274,7 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
@@ -296,7 +296,7 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
   name: dashboard-info
   namespace: tekton-pipelines
@@ -307,7 +307,7 @@ metadata:
   labels:
     app: tekton-dashboard
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/name: dashboard
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/version: v0.23.0
@@ -323,7 +323,7 @@ spec:
       targetPort: 9097
   selector:
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/name: dashboard
     app.kubernetes.io/part-of: tekton-dashboard
 ---
@@ -333,7 +333,7 @@ metadata:
   labels:
     app: tekton-dashboard
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/name: dashboard
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/version: v0.23.0
@@ -404,7 +404,7 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app.kubernetes.io/component: dashboard
-    app.kubernetes.io/instance: default
+#    app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-dashboard
     app.kubernetes.io/managed-by: Helm
   annotations:
