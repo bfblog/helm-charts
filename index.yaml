@@ -34,6 +34,16 @@ entries:
   tekton:
   - apiVersion: v2
     appVersion: 0.31.0
+    created: "2022-02-26T00:07:04.294862014Z"
+    description: A Helm chart for Kubernetes
+    digest: 2b07f9bf7f1d8824612dbc8cd2a09970b5cfa37e059f0b5ec6e4606dbe1662f1
+    name: tekton
+    type: application
+    urls:
+    - https://github.com/bfblog/helm-charts/releases/download/tekton-0.7.6/tekton-0.7.6.tgz
+    version: 0.7.6
+  - apiVersion: v2
+    appVersion: 0.31.0
     created: "2022-02-25T21:25:50.602247841Z"
     description: A Helm chart for Kubernetes
     digest: 5f5f6837584d3f1a2bce15f6211331aa0a43c6f06e4fd8a6ef0f93d701eabca1
@@ -112,4 +122,4 @@ entries:
     urls:
     - https://github.com/bfblog/helm-charts/releases/download/tekton-0.2.0/tekton-0.2.0.tgz
     version: 0.2.0
-generated: "2022-02-25T21:25:50.602296342Z"
+generated: "2022-02-26T00:07:04.294931215Z"
