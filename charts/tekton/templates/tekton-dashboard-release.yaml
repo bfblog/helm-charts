@@ -52,8 +52,12 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: dashboard
-#    app.kubernetes.io/instance: default
+    app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-dashboard
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: tekton-pipelines
   name: tekton-dashboard
   namespace: tekton-pipelines
 ---

@@ -21,7 +21,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 
 ---
@@ -52,7 +52,7 @@ metadata:
     seccomp.security.alpha.kubernetes.io/defaultProfileName: 'runtime/default'
     apparmor.security.beta.kubernetes.io/allowedProfileNames: 'runtime/default'
     apparmor.security.beta.kubernetes.io/defaultProfileName: 'runtime/default'
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 spec:
   privileged: false
@@ -111,7 +111,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 rules:
   - apiGroups: [""]
@@ -141,7 +141,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 rules:
   # Read-write access to create Pods and PVCs (for Workspaces)
@@ -171,7 +171,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 rules:
   # The webhook needs to be able to get and update customresourcedefinitions,
@@ -393,7 +393,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
@@ -418,7 +418,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
@@ -439,7 +439,7 @@ metadata:
     app.kubernetes.io/part-of: tekton-pipelines
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
@@ -474,6 +474,10 @@ metadata:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
     name: tekton-pipelines-controller
@@ -492,6 +496,10 @@ metadata:
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 subjects:
   - kind: ServiceAccount
     name: tekton-pipelines-webhook
@@ -582,7 +590,7 @@ metadata:
     version: "v0.33.0"
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 spec:
   group: tekton.dev
@@ -659,7 +667,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
   name: conditions.tekton.dev
   labels:
@@ -716,7 +724,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
   name: pipelines.tekton.dev
   labels:
@@ -800,7 +808,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
   name: pipelineruns.tekton.dev
   labels:
@@ -913,7 +921,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
   name: pipelineresources.tekton.dev
   labels:
@@ -970,7 +978,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
   name: runs.tekton.dev
   labels:
@@ -1041,7 +1049,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
   name: tasks.tekton.dev
   labels:
@@ -1125,7 +1133,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
   name: taskruns.tekton.dev
   labels:
@@ -1244,6 +1252,10 @@ metadata:
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
     pipeline.tekton.dev/release: "v0.33.0"
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 # The data is populated at install time.
 ---
 apiVersion: admissionregistration.k8s.io/v1
@@ -1257,7 +1269,7 @@ metadata:
     pipeline.tekton.dev/release: "v0.33.0"
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 webhooks:
   - admissionReviewVersions: ["v1"]
@@ -1280,7 +1292,7 @@ metadata:
     pipeline.tekton.dev/release: "v0.33.0"
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 webhooks:
   - admissionReviewVersions: ["v1"]
@@ -1303,7 +1315,7 @@ metadata:
     pipeline.tekton.dev/release: "v0.33.0"
     app.kubernetes.io/managed-by: Helm
   annotations:
-    meta.helm.sh/release-name: tekton
+    meta.helm.sh/release-name: {{ .Chart.Name }}
     meta.helm.sh/release-namespace: default
 webhooks:
   - admissionReviewVersions: ["v1"]
@@ -1431,6 +1443,10 @@ metadata:
   labels:
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 # data:
 #  # location of the gcs bucket to be used for artifact storage
 #  location: "gs://bucket-name"
@@ -1466,6 +1482,10 @@ metadata:
   labels:
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 # data:
 #   # size of the PVC volume
 #   size: 5Gi
@@ -1496,6 +1516,10 @@ metadata:
   labels:
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 data:
   _example: |
     ################################
@@ -1568,6 +1592,10 @@ metadata:
   labels:
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 data:
   # Setting this flag to "true" will prevent Tekton to create an
   # Affinity Assistant for every TaskRun sharing a PVC workspace
@@ -1646,6 +1674,10 @@ metadata:
   labels:
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 data:
   # Contains pipelines version which can be queried by external
   # tools such as CLI. Elevated permissions are already given to
@@ -1677,6 +1709,10 @@ metadata:
   labels:
     app.kubernetes.io/instance: {{ .Chart.Name }}
     app.kubernetes.io/part-of: tekton-pipelines
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: {{ .Chart.Name }}
+    meta.helm.sh/release-namespace: default
 data:
   # An inactive but valid configuration follows; see example.
   lease-duration: "60s"
